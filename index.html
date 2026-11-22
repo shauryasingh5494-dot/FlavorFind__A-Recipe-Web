@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFind - Recipe Finder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <a class="brand" href="#">
+            <span class="brand-mark">✳</span>
+            flavor<span>find</span>
+        </a>
+
+        <nav>
+            <a href="#discover">Discover</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a class="header-cta" href="#discover">Find a recipe ↗</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="discover">
+
+        <div class="hero-copy">
+            <p class="eyebrow">YOUR DAILY DOSE OF DELICIOUS</p>
+
+            <h1>Good food.<br><em>Great mood.</em></h1>
+
+            <p class="hero-description">
+                Find something delicious to make today.
+                Search by dish, ingredient, or just follow your cravings.
+            </p>
+
+            <form class="search-form" id="searchForm">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Try pasta, chicken, avocado..."
+                >
+
+                <button type="submit">Search →</button>
+            </form>
+
+            <div class="quick-search">
+                <span>Popular:</span>
+                <button type="button" data-search="Pasta">Pasta</button>
+                <button type="button" data-search="Chicken">Chicken</button>
+                <button type="button" data-search="Vegetarian">Vegetarian</button>
+            </div>
+        </div>
+
+        <div class="hero-art">
+            <div class="hero-image-wrap">
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+                    alt="Fresh food bowl"
+                >
+            </div>
+
+            <div class="floating-note">
+                <span class="note-icon">✦</span>
+                <div>
+                    <strong>Made with love</strong>
+                    <small>One recipe at a time</small>
+                </div>
+            </div>
+
+            <div class="hero-stamp">
+                FRESH<br>IDEAS<br>DAILY
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="category-section" id="categories">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">A LITTLE INSPIRATION</p>
+                <h2>What are you craving?</h2>
+            </div>
+            <p class="section-side-note">
+                Pick a mood. We'll find the food.
+            </p>
+        </div>
+
+        <div class="category-list">
+
+            <button class="category-chip selected" data-category="All">
+                ✳ All recipes
+            </button>
+
+            <button class="category-chip" data-category="Seafood">
+                🐟 Seafood
+            </button>
+
+            <button class="category-chip" data-category="Chicken">
+                🍗 Chicken
+            </button>
+
+            <button class="category-chip" data-category="Vegetarian">
+                🥑 Vegetarian
+            </button>
+
+            <button class="category-chip" data-category="Dessert">
+                🍰 Dessert
+            </button>
+
+            <button class="category-chip" data-category="Pasta">
+                🍝 Pasta
+            </button>
+
+            <button class="category-chip" data-category="Starter">
+                🥗 Starters
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Recipe Results -->
+    <section class="recipes-section">
+
+        <div class="section-heading recipe-heading">
+            <div>
+                <p class="eyebrow">HANDPICKED FOR YOUR KITCHEN</p>
+                <h2 id="resultsTitle">Explore recipes</h2>
+            </div>
+
+            <span class="result-count" id="resultCount">
+                Loading recipes...
+            </span>
+        </div>
+
+        <div class="status-message" id="statusMessage">
+            Finding delicious ideas...
+        </div>
+
+        <div class="recipe-grid" id="recipeGrid"></div>
+
+        <button class="load-more" id="loadMore" hidden>
+            Show more recipes ↓
+        </button>
+
+    </section>
+
+    <!-- About Banner -->
+    <section class="ingredient-banner" id="about">
+
+        <div class="banner-icon">✳</div>
+
+        <div>
+            <p class="eyebrow">LESS THINKING, MORE COOKING</p>
+            <h2>Your next favorite meal<br>is just a search away.</h2>
+        </div>
+
+        <a href="#discover">Let's get cooking ↗</a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <a class="brand" href="#">
+            <span class="brand-mark">✳</span>
+            flavor<span>find</span>
+        </a>
+
+        <p>Made for curious cooks and hungry hearts.</p>
+
+        <small>Recipe data provided by TheMealDB.</small>
+
+    </footer>
+
+    <!-- Recipe Details Modal -->
+    <div class="modal" id="recipeModal" aria-hidden="true">
+
+        <div class="modal-backdrop" data-close></div>
+
+        <article class="modal-card" role="dialog" aria-modal="true">
+
+            <button class="modal-close" type="button" data-close>
+                ×
+            </button>
+
+            <div id="modalContent"></div>
+
+        </article>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
